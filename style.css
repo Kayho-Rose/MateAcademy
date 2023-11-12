@@ -126,6 +126,7 @@ ul{
 
 .small-pic,
 .wide-pic{
+    flex-grow: 1;
     width: 130px;
     height: 130px;
     object-fit: cover;
@@ -217,16 +218,11 @@ li{
     /*--- Browse Category ---*/
 
     .pic{
-        display: flex;
         gap: 1.5em;
     }
 
     .wide-pic{
         flex-grow: 2;
-    }
-
-    .small-pic{
-        flex-grow: 1;
     }
 
     .wide-pic,
