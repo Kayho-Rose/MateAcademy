@@ -1,0 +1,336 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    color: #292929;
+
+}
+
+.container{
+    margin: 0 20px;
+}
+
+section,
+footer{
+    margin-top: 120px;
+}
+
+/* --- Header navigation --- */
+header{
+    background: url('./images/people/headphones.png');
+    background-size: cover;
+    background-position: 35%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+}
+
+header,
+.nav-menu{
+    padding: 2.25rem 0;
+}
+
+.nav,
+.nav-menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+   width: 127px; 
+}
+
+.wave{
+    width: 32px;
+    margin-bottom: 1.25em;
+}
+
+/* --- Menu --- */
+
+.menu{
+    background-color: #E8EFF9;
+    height: 105vh;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    transform: translateX(-100%);
+    transition: transform 1000ms;
+}
+
+.menu:target{
+    transform: translateX(0%);
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+
+/* ---Recommend Grid --- */
+
+#recommended{
+    position: relative;
+    width: 100%;
+}
+
+.grid{
+    display: grid;
+    grid-gap: 48px;
+}
+
+.template{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.template>img{
+    width: 280px;
+
+}
+
+.template-text>p{
+    margin: 0.5em 0 0.75em;
+}
+
+/*--- Browse Category ---*/
+
+.category{
+    margin-top: 3em;
+}
+
+.category>h3{
+    margin: 1em 0 0 0;
+}
+
+.pic{
+    display: flex;
+    align-items: center;
+    gap: 1.25em;
+}
+
+.small-pic,
+.wide-pic{
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* --- Buy direct --- */
+
+.point{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1em;
+    margin: 2em 0 2.5em;
+}
+
+section>p{
+    line-height: 27px;
+}
+/* --- Footer --- */
+
+footer{
+    background-image: url('./images/people/footer.png');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 35vh;
+
+}
+
+/* --- Typography --- */
+
+i{
+    font-size: 1.5rem;
+}
+
+h1{
+    font-size: 2rem;
+    text-align: center;
+    letter-spacing: -1.5px;
+}
+
+.promo{
+    font-style: italic;
+    font-weight: 800;
+    line-height: 100%; /* 32px */
+    letter-spacing: -1.5px;
+    text-align: start;
+}
+
+h3{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+}
+
+p,
+h3,
+h1{
+    margin: 0;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+li{
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 22px; /* 100% */
+    letter-spacing: 2px;
+}
+
+/* --- Media query tablet --- */
+
+@media (min-width: 744px){
+    .container{
+        margin: 0 72px;
+    }
+
+    /* Typography*/
+
+    h1{
+        font-size: 40px ;
+    }
+
+    /*--- Browse Category ---*/
+
+    .pic{
+        display: flex;
+        gap: 1.5em;
+    }
+
+    .wide-pic{
+        flex-grow: 2;
+    }
+
+    .small-pic{
+        flex-grow: 1;
+    }
+
+    .wide-pic,
+    .small-pic{
+        height: 320px;
+    }
+
+    .category>h3{
+        font-size: 1.5rem;
+    }
+
+    /* --- Buy direct --- */
+
+    .direct{
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .direct>h1{
+        width: 40% ;
+        text-align: start;
+    }
+
+    .direct-text{
+        width: 50%;
+    }
+}
+
+/* --- Media query laptop --- */ 
+
+@media (min-width: 1024px) {
+    
+    .container{
+        margin: 0 120px;
+    }
+    
+    /*--- Header ---*/
+    header{
+        height: 85vh;
+        background-position: center;
+    }
+
+    header,
+    .nav-menu{
+        padding: 64px 0;
+    }
+    
+    .logo{
+        width: 190px; 
+    }
+
+    .wave{
+        width: 64px;
+        margin-bottom: 2.5em;
+    }
+
+    h1{
+        font-size: 3rem;
+        line-height: 100%
+    }
+
+    /* ---Recommend Grid --- */
+
+    .grid{
+        grid-template: repeat(2, fit-content) / repeat(3, 1fr);
+        grid-template-areas: "text text text" "card1 card2 card3";
+        justify-content: space-between;
+    }
+
+    .template-text{
+        align-self: flex-start;
+    }
+
+    .grid>h1{
+        grid-area: text;
+    }
+
+    #temp-1{
+        grid-area: card1;
+    }
+
+    #temp-2{
+        grid-area: card2;
+    }
+
+    #temp-3{
+        grid-area: card3;
+    }
+
+    /*--- Browse Category ---*/
+
+    .wide-pic,
+    .small-pic{
+        height: 320px;
+    }
+
+    .category>h3{
+        font-size: 1.5rem;
+    }
+
+
+    /* --- Fotter --- */
+
+    footer{
+        height: 460px;
+    }
+}
