@@ -9,12 +9,16 @@ body{
     padding: 0;
 }
 
-.container{
-    margin: 0 20px;
+main{
+    background-color: white;
 }
 
-section,
-footer{
+.container{
+    padding: 0 20px;
+}
+
+#categories,
+#how-to-buy{
     margin-top: 120px;
 }
 
@@ -91,21 +95,25 @@ ul{
     width: 100%;
 }
 
+.grid>h1{
+    margin-top: 120px;
+}
+
 .grid{
     display: grid;
-    grid-gap: 48px;
+    grid-gap: 3em;
 }
 
 .template{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     gap: 2rem;
 }
 
 .template>img{
-    width: 280px;
-
+    width: 80%;
 }
 
 .template-text>p{
@@ -139,6 +147,10 @@ ul{
 
 /* --- Buy direct --- */
 
+.direct{
+    padding-bottom: 120px;
+}
+
 .point{
     display: flex;
     flex-direction: column;
@@ -153,6 +165,9 @@ section>p{
 /* --- Footer --- */
 
 footer{
+    position: sticky;
+    bottom: 0;
+    z-index: -1;
     background-image: url('./images/people/footer.png');
     background-position: center;
     background-size: cover;
@@ -210,7 +225,7 @@ li{
 
 @media (min-width: 744px){
     .container{
-        margin: 0 72px;
+        padding: 0 72px;
     }
 
     /* Typography*/
@@ -242,16 +257,20 @@ li{
 
     .direct{
         display: flex;
-        justify-content: space-between;
+        gap: 24px;
     }
 
     .direct>h1{
-        width: 40% ;
         text-align: start;
     }
 
-    .direct-text{
-        width: 50%;
+    .direct-text,
+    .direct>h1{
+        flex-basis: 50%;
+    }
+
+    .point{
+        margin: 0 0 2.5em;
     }
 }
 
@@ -260,7 +279,7 @@ li{
 @media (min-width: 1024px) {
     
     .container{
-        margin: 0 120px;
+        padding: 0 120px;
     }
     
     /*--- Header ---*/
